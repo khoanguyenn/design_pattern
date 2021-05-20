@@ -1,19 +1,22 @@
+import java.io.IOException;
 import java.util.List;
 
 public abstract class Question {
     private String header;
     private int weight;
-    protected List<String> options;
-    private String answer;
+    protected String answer;
     public Question(String header, int weight) {
         this.header = header;
         this.weight = weight;
     }
+    public String getHeader() {
+        return this.header;
+    }
     public void setHeader(String header) {
         this.header = header;
     }
-    public String getHeader() {
-        return this.header;
+    public int getWeight() {
+        return this.weight;
     }
     public void setWeight(int weight) {
         this.weight = weight;
@@ -21,17 +24,14 @@ public abstract class Question {
     public String getAnswer() {
         return this.answer;
     }
-    public String getPossibleAnswer() {
-        StringBuilder result = new StringBuilder();
-        for (String option : this.options) {
-            result.append(option);
-            result.append(" ");
+    public void setAnswer(String answer) throws IllegalArgumentException{};
+    public boolean evaluate(Question question) {
+        if (this.answer == null) {
+            return false;
         }
-        return result.toString();
-    }
-    public void setAnswer(String answer) throws IllegalArgumentException {
-        //TODO: Check if answer is in options list
-        //TODO: Check if answer is already exists
-        this.answer = answer;
-    }
+        if (this.answer.equals(question.getAnswer())) {
+            return true;
+         }
+         return false;
+    };
 }

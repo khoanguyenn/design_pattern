@@ -16,10 +16,10 @@ public class Exam {
         List<Question> correctQuestions = correctExam.getQuestionList();
         int mark = 0;
         for (int qNumber = 0; qNumber < this.questionList.size(); qNumber++) {
-            String studentAnswer = this.questionList.get(qNumber).getAnswer();
-            String correctAnswer = correctQuestions.get(qNumber).getAnswer();
-            if(correctAnswer.equals(studentAnswer)) {
-                mark++;
+            Question studentQuestion = this.questionList.get(qNumber);
+            Question correctAnswer = correctQuestions.get(qNumber);
+            if(studentQuestion.evaluate(correctAnswer)) {
+                mark += studentQuestion.getWeight();
             }
         }
         return mark;

@@ -9,7 +9,7 @@ public class Client {
         // To answer some of the question
         // Caution: not implement check mechanism yet, please find in setAnswer
         currentExam.setAnswer(0, "3");
-        currentExam.setAnswer(1, "49");
+        currentExam.setAnswer(1, "2");
         // Render the currentExam
         for (Question question : currentExam.getQuestionList()) {
             System.out.println(question.getHeader() + " : " + question.getAnswer());

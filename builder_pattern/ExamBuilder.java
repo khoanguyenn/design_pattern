@@ -11,7 +11,7 @@ public class ExamBuilder {
         Exam exam = new Exam();
         exam.addQuestion(QuestionBuilder.buildMCQuestion("What is 1 + 2 ?", 2));
         exam.addQuestion(QuestionBuilder.buildSCQuestion("What is 7 * 9 ?", 3));
-        exam.addQuestion(QuestionBuilder.buildTFQuestion("Who is the first person do math ?", 5));
+        exam.addQuestion(QuestionBuilder.buildTFQuestion("Is human being do math ?", 5));
         return exam;
     }
 
