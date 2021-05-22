@@ -9,6 +9,9 @@ public class Exam {
     public void setAnswer(int questionNumber, String answer) {
         questionList.get(questionNumber).setAnswer(answer);
     }
+    public void setAnswer(int questionNumber, String ...answer) {
+        questionList.get(questionNumber).setAnswer(answer);
+    }
     public List<Question> getQuestionList() {
         return this.questionList;
     }
@@ -18,9 +21,7 @@ public class Exam {
         for (int qNumber = 0; qNumber < this.questionList.size(); qNumber++) {
             Question studentQuestion = this.questionList.get(qNumber);
             Question correctAnswer = correctQuestions.get(qNumber);
-            if(studentQuestion.evaluate(correctAnswer)) {
-                mark += studentQuestion.getWeight();
-            }
+                mark += studentQuestion.evaluate(correctAnswer);
         }
         return mark;
     }

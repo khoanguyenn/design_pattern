@@ -1,14 +1,11 @@
-import java.io.IOException;
 import java.util.List;
 
 public abstract class Question {
+    public enum Type {
+        MultipleChoice, TrueFalse, SingleChoice
+    };
     private String header;
     private int weight;
-    protected String answer;
-    public Question(String header, int weight) {
-        this.header = header;
-        this.weight = weight;
-    }
     public String getHeader() {
         return this.header;
     }
@@ -21,17 +18,10 @@ public abstract class Question {
     public void setWeight(int weight) {
         this.weight = weight;
     }
-    public String getAnswer() {
-        return this.answer;
-    }
-    public void setAnswer(String answer) throws IllegalArgumentException{};
-    public boolean evaluate(Question question) {
-        if (this.answer == null) {
-            return false;
-        }
-        if (this.answer.equals(question.getAnswer())) {
-            return true;
-         }
-         return false;
-    };
+    public void setOptions(String[] optionsi) {}
+    public List<String> getOptions() {return null;}
+    public void setAnswer(String answer) {}
+    public void setAnswer(String ...answer) {}
+    public String getAnswer() {return null;}
+    public int evaluate(Question correctAnswer) {return 0;}
 }
