@@ -4,7 +4,7 @@ public class Client {
         Exam currentExam = ExamBuilder.buildTeamExam();
         // Example to list out the header of the questions
         for (Question question : currentExam.getQuestionList()) {
-            System.out.println("📚 " + question.getHeader());
+            System.out.println("📚 " + question.getHeader() + " : " + question.getWeight() + " : " + question.getOptions().toString());
         }
         // To answer some of the question
         // Caution: not implement check mechanism yet, please find in setAnswer

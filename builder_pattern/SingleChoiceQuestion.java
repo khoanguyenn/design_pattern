@@ -1,8 +1,9 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class SingleChoiceQuestion extends Question {
-   private List<String> options;
+   private List<String> options = new ArrayList<String>();
    private String answer = "";
 
    @Override

@@ -1,9 +1,10 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class MultipleChoiceQuestion extends Question{
-    private List<String> options;
-    private List<String> answers;
+    private List<String> options = new ArrayList<String>();
+    private List<String> answers = new ArrayList<String>();
     
     //Set a single answer, appends to the current answer list
     @Override
@@ -26,9 +27,9 @@ public class MultipleChoiceQuestion extends Question{
         StringBuilder answerString = new StringBuilder("");
         for (String answer : answers) {
             answerString.append(answer);
-            answerString.append(",");
+            answerString.append(", ");
         }
-        return answerString.substring(0, answerString.length() - 1).toString();
+        return answerString.substring(0, answerString.length() - 2).toString();
     }
 
     public List<String> getAnswers() {

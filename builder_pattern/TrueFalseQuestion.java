@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TrueFalseQuestion extends Question {
-   private static List<String> options = Arrays.asList("TRUE", "FALSE", "NONE");
+   private List<String> options = Arrays.asList("TRUE", "FALSE", "NONE");
    private String answer = "";
    
    @Override
@@ -14,6 +14,11 @@ public class TrueFalseQuestion extends Question {
 
    public String getAnswer() {
       return this.answer;
+   }
+
+   @Override
+   public List<String> getOptions() {
+      return this.options;
    }
 
    @Override
