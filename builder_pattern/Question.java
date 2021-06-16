@@ -18,7 +18,7 @@ public abstract class Question {
     public void setWeight(int weight) {
         this.weight = weight;
     }
-    public void setOptions(String[] optionsi) {}
+    public void setOptions(String[] options) {}
     public List<String> getOptions() {return null;}
     public void setAnswer(String answer) {}
     public void setAnswer(String ...answer) {}
